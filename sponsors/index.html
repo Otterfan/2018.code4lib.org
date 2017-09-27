@@ -14,6 +14,37 @@ title: Sponsors
                 <a class="btn btn-primary btn-lg" href="/prospectus">View our Prospectus</a>
             </p>
 
+            <div class="row">
+                <h2>Ongoing Donation Goals</h2>
+                <div id="donation-thermometers"></div>
+            </div>
+
+            <!-- thermometer HTML/CSS based on https://codepen.io/robotballoon/pen/Fjnyp -->
+            <template id="thermometer">
+                <div class=countdown-wrap>
+                  <div class="goal-title">
+                      <div class="label">{{label}}</div>
+                      <div class="goal">{{goal}}</div>
+                  </div>
+                  <div class="glass">
+                    <div class="progress">
+                    </div>
+                  </div>
+                  <div class="goal-stat">
+                    <span class="goal-number percent">{{percent}}</span>
+                    <span class="goal-label">Funded</span>
+                  </div>
+                  <div class="goal-stat">
+                    <span class="goal-number total">{{total}}</span>
+                    <span class="goal-label">Raised</span>
+                  </div>
+                  <div class="goal-stat">
+                    <span class="goal-number donations">{{donations}}</span>
+                    <span class="goal-label">Donations</span>
+                  </div>
+                </div>
+            </template>
+
             <!-- Adamantium -->
             <div class="row sponsor-row">
                 {% include sponsors/plate.html level="Adamantium Sponsor" badge="adamantium-badge" %}
@@ -193,3 +224,7 @@ title: Sponsors
         </div>
     </div>
 </div>
+
+{% comment %} for donation "thermometer" display {% endcomment %}
+<script src="/assets/js/thermometer.js"></script>
+<style>@import url('/assets/css/thermometer.css') screen;</style>
